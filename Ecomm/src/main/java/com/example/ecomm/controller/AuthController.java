@@ -125,4 +125,14 @@ public class AuthController {
         UserDto userDto = authService.createUser (signupRequest);
         return new ResponseEntity<>(userDto, HttpStatus.OK);
     }
+    @GetMapping("/{id}")
+    public ResponseEntity<User> getUserById(@PathVariable Long id) {
+        Optional<User> optionalUser = userRepository.findById(id);
+        if (optionalUser.isPresent()) {
+            return ResponseEntity.ok(optionalUser.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
 }

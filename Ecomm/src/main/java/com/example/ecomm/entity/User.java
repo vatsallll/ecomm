@@ -19,7 +19,7 @@ public class User {
     private UserRole role;
 
     @Lob
-    @Column(columnDefinition = "longBlob")
+    @Column
     private byte[] img;
 
     // Getters and Setters
