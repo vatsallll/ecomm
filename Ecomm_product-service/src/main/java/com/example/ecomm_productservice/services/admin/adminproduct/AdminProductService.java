@@ -18,5 +18,7 @@ public interface AdminProductService {
     Page<Product> getPaginatedProducts(Pageable pageable);
     boolean deleteProduct(Long id);
      Page<Product> getProductsByName(String name,Pageable pageable);
+    ProductDto updateProduct(Long productId, ProductDto productDto) throws IOException;
+    ProductDto getProductById(Long productId);
 
 }
