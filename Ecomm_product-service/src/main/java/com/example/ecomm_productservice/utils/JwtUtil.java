@@ -39,7 +39,7 @@ public class JwtUtil {
                 .setClaims(claims)
                 .setSubject(username)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 30)) // 10 hours
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 )) // 10 hours
                 .signWith(io.jsonwebtoken.SignatureAlgorithm.HS256, SECRET) // ✅ Sign with secret key
                 .compact();
     }
